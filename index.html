@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dice roller</title>
+    <style>
+        body
+        {
+            background-color: #758694;
+        }
+        .container
+        {
+            width: 400px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 40px auto;
+            border-radius: 10px;
+            background-color: #FFF8F3;
+        }
+        
+        #dice
+        {
+            height : 300px ;
+            display: block;
+            margin: 20px auto;
+            
+        }
+        .btn
+        {
+           
+            display: block;
+            margin: 10px auto;
+            font-size:20px ;
+            padding: 5px 20px;
+            border-radius: 20px;
+            border: 1px solid black;
+            cursor: pointer;
+            background-color: #F7E7DC;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <img src="dice.png"  class="dice-img" id="dice" />
+    <br> <br>
+    <button type="button" onclick="rollDice()" class="btn">Roll The Dice</button>
+    </div>
+
+    <script>
+        const diceImg = document.getElementById("dice");
+        function rollDice() {
+            const min = 1;
+            const max = 7;
+            const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+            if (randomNumber == 1) {
+                diceImg.src = "one.png";
+            }
+            else if (randomNumber == 2) {
+                diceImg.src = "two.png";
+            }
+            else if (randomNumber == 3) {
+                diceImg.src = "three.png";
+            }
+            else if (randomNumber == 4) {
+                diceImg.src = "four.png";
+            }
+            else if (randomNumber == 5) {
+                diceImg.src = "five.png";
+            }
+            else {
+                diceImg.src = "six.png";
+            }
+        }
+    </script>
+</body>
+</html>
